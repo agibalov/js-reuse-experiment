@@ -1,0 +1,31 @@
+<#import "../layout/layout.ftl.html" as layout>
+<@layout.do "Home - Angular">
+	<div ng-controller="AddNumbersController">
+		<form ng-submit="run()" class="form-horizontal">
+			<legend>Add numbers</legend>
+			<div class="control-group">
+				<label class="control-label">A</label>
+				<div class="controls">				
+					<input type="text" ng-model="a">
+				</div>
+			</div>				
+			<div class="control-group">
+				<label class="control-label">B</label>
+				<div class="controls">				
+					<input type="text" ng-model="b">
+				</div>
+			</div>
+			<div class="control-group">
+				<div class="controls">
+					<button type="submit" class="btn btn-large">Compute</button>
+				</div>
+			</div>			
+		</form>
+<h4>Native backend says:</h4>
+<pre>{{nativeResult|json}}</pre>
+<h4>JS backend says:</h4>
+<pre>{{jsResult|json}}</pre>
+<h4>Offline backend says:</h4>
+<pre>{{offlineResult|json}}</pre>
+	</div>
+</@layout.do>
